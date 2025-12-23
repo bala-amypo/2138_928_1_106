@@ -19,7 +19,7 @@ public class ComplianceLogEntity {
     @JoinColumn(name = "sensor_reading_id")
     private SensorReadingEntity sensorReading;
 
-    // Getters and Setters
+    
     public Long getId() {
         return id;
     }

@@ -15,7 +15,7 @@ public class SensorEntity {
 
     private String type;
 
-    // Getters and Setters
+    
     public Long getId() {
         return id;
     }

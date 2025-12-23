@@ -13,7 +13,7 @@ public class LocationEntity {
     private String name;
     private String address;
 
-    // Getters and Setters
+    
     public Long getId() {
         return id;
     }
