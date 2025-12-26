@@ -14,6 +14,6 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Demo API")
                         .version("1.0")
-                        .description("Demo project OpenAPI documentation"));
+                        .description("JWT Authentication API"));
     }
 }
