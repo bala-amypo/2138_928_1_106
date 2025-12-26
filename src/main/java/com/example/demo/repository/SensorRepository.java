@@ -1,9 +1,18 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.SensorEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.example.demo.entity.Sensor;
+import java.util.List;
+import java.util.Optional;
 
-@Repository
-public interface SensorRepository extends JpaRepository<SensorEntity, Long> {
+public interface SensorRepository {
+
+    Optional<Sensor> findById(Long id);
+
+    Sensor save(Sensor sensor);
+
+    List<Sensor> findAll();
+
+    Optional<Sensor> findBySensorCode(String sensorCode);
+
+    List<Sensor> findByLocation_Region(String region);
 }
