@@ -1,10 +1,20 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.SensorReadingEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.example.demo.entity.SensorReading;
+import java.util.List;
+import java.util.Optional;
 
-@Repository
-public interface SensorReadingRepository
-        extends JpaRepository<SensorReadingEntity, Long> {
+public interface SensorReadingRepository {
+
+    Optional<SensorReading> findById(Long id);
+
+    SensorReading save(SensorReading reading);
+
+    List<SensorReading> findBySensor_Id(Long sensorId);
+
+    List<SensorReading> findBySensor_IdAndReadingTimeBetween(
+            Long sensorId,
+            Object start,
+            Object end
+    );
 }

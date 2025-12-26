@@ -1,10 +1,11 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.ComplianceThresholdEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.example.demo.entity.ComplianceThreshold;
+import java.util.Optional;
 
-@Repository
-public interface ComplianceThresholdRepository
-        extends JpaRepository<ComplianceThresholdEntity, Long> {
+public interface ComplianceThresholdRepository {
+
+    ComplianceThreshold save(ComplianceThreshold threshold);
+
+    Optional<ComplianceThreshold> findBySensorType(String sensorType);
 }
