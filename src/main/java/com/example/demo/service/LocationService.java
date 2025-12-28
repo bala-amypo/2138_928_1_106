@@ -1,23 +1,10 @@
-package com.example.demo.service.impl;
+package com.example.demo.service;
 
 import com.example.demo.entity.Location;
-import com.example.demo.repository.LocationRepository;
+import java.util.List;
 
-public class LocationServiceImpl {
-    private final LocationRepository repo;
-
-    public LocationServiceImpl(LocationRepository repo) {
-        this.repo = repo;
-    }
-
-    public Location createLocation(Location l) {
-        if (l.getRegion() == null)
-            throw new IllegalArgumentException("region required");
-        return repo.save(l);
-    }
-
-    public Location getLocation(Long id) {
-        return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("not found"));
-    }
+public interface LocationService {
+    Location createLocation(Location location);
+    Location getLocation(Long id);
+    List<Location> getAllLocations();
 }
